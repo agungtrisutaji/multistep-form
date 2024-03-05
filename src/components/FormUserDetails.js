@@ -20,16 +20,16 @@ export class FormUserDetails extends Component {
           <TextField
             placeholder='Masukan nama Anda'
             label='Nama'
-            onChange={handleChange('FirstName')}
-            defaultValue={values.FirstName}
+            onChange={handleChange('nama')}
+            defaultValue={values.nama}
             margin='normal'
             fullWidth
-            name='FirstName'
+            name='nama'
           />
           <br />
           <TextField
-            placeholder='Enter Your Last Name'
-            label='Last Name'
+            placeholder='Divisi'
+            label='Divisi'
             onChange={handleChange('lastName')}
             defaultValue={values.lastName}
             margin='normal'

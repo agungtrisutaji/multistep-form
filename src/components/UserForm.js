@@ -7,7 +7,7 @@ import Success from './Success';
 export class UserForm extends Component {
   state = {
     step: 1,
-    FirstName: '',
+    nama: '',
     lastName: '',
     email: '',
     occupation: '',
@@ -38,8 +38,8 @@ export class UserForm extends Component {
 
   render() {
     const { step } = this.state;
-    const { FirstName, lastName, email, occupation, city, bio } = this.state;
-    const values = { FirstName, lastName, email, occupation, city, bio };
+    const { nama, lastName, email, occupation, city, bio } = this.state;
+    const values = { nama, lastName, email, occupation, city, bio };
 
     switch (step) {
       case 1:
