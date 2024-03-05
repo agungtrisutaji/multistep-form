@@ -20,7 +20,7 @@ export class FormPersonalDetails extends Component {
     return (
       <>
         <Dialog open fullWidth maxWidth='sm'>
-          <AppBar title='Enter Personal Details' />
+          <AppBar title='Enter Personal Details'></AppBar>
           <TextField
             placeholder='Enter Your Occupation'
             label='Occupation'

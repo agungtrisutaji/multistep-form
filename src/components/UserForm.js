@@ -3,12 +3,14 @@ import FormUserDetails from './FormUserDetails';
 import FormPersonalDetails from './FormPersonalDetails';
 import Confirm from './Confirm';
 import Success from './Success';
+import { TopBar } from './TopBar';
 
 export class UserForm extends Component {
   state = {
     step: 1,
+    barTitle: '',
     nama: '',
-    lastName: '',
+    divisi: '',
     email: '',
     occupation: '',
     city: '',
@@ -38,8 +40,8 @@ export class UserForm extends Component {
 
   render() {
     const { step } = this.state;
-    const { nama, lastName, email, occupation, city, bio } = this.state;
-    const values = { nama, lastName, email, occupation, city, bio };
+    const { nama, divisi, email, occupation, city, bio } = this.state;
+    const values = { nama, divisi, email, occupation, city, bio };
 
     switch (step) {
       case 1:

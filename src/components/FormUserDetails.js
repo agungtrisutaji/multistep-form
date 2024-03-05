@@ -3,6 +3,7 @@ import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { Box, MenuItem, Typography } from '@material-ui/core';
 
 export class FormUserDetails extends Component {
   continue = (e) => {
@@ -16,25 +17,37 @@ export class FormUserDetails extends Component {
     return (
       <>
         <Dialog open fullWidth maxWidth='sm'>
-          <AppBar title='Enter User Details' />
           <TextField
+            isRequired={true}
             placeholder='Masukan nama Anda'
             label='Nama'
             onChange={handleChange('nama')}
             defaultValue={values.nama}
             margin='normal'
             fullWidth
+            helperText={'Silahkan isi nama Anda'}
+            type='text'
             name='nama'
           />
           <br />
           <TextField
-            placeholder='Divisi'
-            label='Divisi'
-            onChange={handleChange('lastName')}
-            defaultValue={values.lastName}
-            margin='normal'
-            fullWidth
-          />
+            label='Pilih Divisi'
+            select
+            SelectProps={{
+              multiple: false,
+            }}
+            size='small'
+            color='secondary'
+            helperText='Pilih Divisi Anda'
+            value={values.divisi}
+            onChange={handleChange('divisi')}>
+            <MenuItem value='S'>SALES</MenuItem>
+            <MenuItem value='SM'>SERVICE DELIVERY MANAGER</MenuItem>
+            <MenuItem value='TS'>TECHNICAL SUPPORT</MenuItem>
+            <MenuItem value='F'>FINANCE</MenuItem>
+            <MenuItem value='W'>WAREHOUSE</MenuItem>
+            <MenuItem value='HR'>HUMAN RESOURCE</MenuItem>
+          </TextField>
           <br />
           <TextField
             placeholder='Enter Your Email'
@@ -42,6 +55,7 @@ export class FormUserDetails extends Component {
             onChange={handleChange('email')}
             defaultValue={values.email}
             margin='normal'
+            type='email'
             fullWidth
           />
           <br />

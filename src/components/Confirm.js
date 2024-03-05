@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
 import {
-  FormControl,
   Input,
-  List,
-  ListItem,
-  ListItemText,
 } from '@material-ui/core/';
 import Button from '@material-ui/core/Button';
 
@@ -27,22 +23,6 @@ export class Confirm extends Component {
       .catch((error) => {
         console.error('Error!', error);
       });
-    // fetch(
-    //   'https://script.google.com/macros/s/AKfycbxqSirDlqJTwchB8Zeo7rhr_Wn2i8JNjBhNEOmWfocAcoM4Yme3gNCUeh85X6mr8pw/exec',
-    //   {
-    //     method: 'POST',
-    //     body: new FormData(document.forms['result']),
-    //   }
-    // )
-    // .then((res) => res.json())
-    // .then((data) => {
-    //   console.log('Raw Response:', data); // Tampilkan respons sebelum mengonversi menjadi JSON
-    //   try {
-    //     console.log('Parsed JSON:', JSON.parse(data));
-    //   } catch (error) {
-    //     console.error('Error parsing JSON:', error);
-    //   }
-    // });
     this.props.nextStep();
   };
 
@@ -53,7 +33,7 @@ export class Confirm extends Component {
 
   render() {
     const {
-      values: { nama, lastName, email, occupation, city, bio },
+      values: { nama, divisi, email, occupation, city, bio },
     } = this.props;
     return (
       <>
@@ -72,8 +52,8 @@ export class Confirm extends Component {
             {/* <Input
               primary='Last Name'
               readOnly
-              value={lastName}
-              secondary={lastName}
+              value={divisi}
+              secondary={divisi}
             /> */}
             <Input
               type='email'
